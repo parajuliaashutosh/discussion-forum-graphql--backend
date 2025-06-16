@@ -15,8 +15,8 @@ export class DotenvConfig {
     static DATABASE_NAME = process.env.DATABASE_NAME;
 
     // JWT SECRET
-    static JWT_SECRET = process.env.JWT_SECRET;
-    static JWT_TOKEN_EXPIRE = process.env.JWT_TOKEN_EXPIRE;
+    static JWT_SECRET = process.env.JWT_SECRET!;
+    static JWT_TOKEN_EXPIRE = process.env.JWT_TOKEN_EXPIRE!;
 
     // SEED ADMIN PASSWORD
     static ADMIN_PASSWORD = process.env.ADMIN_PASSWORD!;
