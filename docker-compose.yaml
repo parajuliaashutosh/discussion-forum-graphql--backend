@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  app:
+    container_name: discussion-forum-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:${PORT}"
+    volumes:
+      - .:/app
+    env_file:
+      - .env.production
+    command: npm run start:dev
+  db:
+    container_name: discussion-forum-db
+    image: postgres:alpine
+    ports:
+      - "5433:5432"
+    volumes:
+      - db:/home/postgres
+    environment:
+      - POSTGRES_USER=${DATABASE_USERNAME}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_NAME}
+volumes:
+  db:
+    driver: local
+networks:
+  default:
+    driver: bridge

@@ -4,6 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/server.js",
+    "build": "tsc",
     "start:dev": "ts-node-dev src/server.ts",
     "format": "npx prettier --write ./src",
     "format:check": "npx prettier --check ./src",
