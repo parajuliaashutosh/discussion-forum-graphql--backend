@@ -1,6 +1,13 @@
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
+import Print from '../utils/Print';
 import { DotenvConfig } from './env.config';
+
+Print.info('Database Configuration:');
+Print.info(`Host: ${DotenvConfig.DATABASE_HOST}`);
+Print.info(`Port: ${DotenvConfig.DATABASE_PORT}`);
+Print.info(`Username: ${DotenvConfig.DATABASE_USERNAME}`);
+Print.info(`Database: ${DotenvConfig.DATABASE_NAME}`);
 
 export const AppDataSource = new DataSource({
     type: 'postgres',

@@ -1,7 +1,11 @@
 import dotenv from 'dotenv';
 import path from 'path';
 
-dotenv.config({ path: path.resolve(process.cwd(), '.env') });
+// Load the correct env file based on NODE_ENV
+const envFile =
+    process.env.NODE_ENV === 'production' ? '.env.production' : '.env';
+
+dotenv.config({ path: path.resolve(process.cwd(), envFile) });
 
 export class DotenvConfig {
     static NODE_ENV = process.env.NODE_ENV;

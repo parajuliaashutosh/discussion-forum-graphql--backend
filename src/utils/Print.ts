@@ -7,15 +7,17 @@ const log = console.log;
 
 class Print {
     static error(message: string): void {
-        if (DotenvConfig.NODE_ENV === Environment.DEVELOPMENT)
-            log(chalk.bgRed(message));
-        else Logger.error(message);
+        if (DotenvConfig.NODE_ENV === Environment.PRODUCTION)
+            Logger.error(message);
+
+        log(chalk.bgRed(message));
     }
 
     static info(message: string): void {
-        if (DotenvConfig.NODE_ENV === Environment.DEVELOPMENT)
-            log(chalk.green(message));
-        else Logger.info(message);
+        if (DotenvConfig.NODE_ENV === Environment.PRODUCTION)
+            Logger.info(message);
+
+        log(chalk.green(message));
     }
 
     static warn(message: string): void {
@@ -25,9 +27,9 @@ class Print {
     }
 
     static debug(message: string): void {
-        if (DotenvConfig.NODE_ENV === Environment.DEVELOPMENT)
-            log(chalk.blue(message));
-        else Logger.debug(message);
+        if (DotenvConfig.NODE_ENV === Environment.PRODUCTION)
+            Logger.debug(message);
+        log(chalk.blue(message));
     }
 }
 

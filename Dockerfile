@@ -19,6 +19,6 @@ RUN npm install --production
 
 COPY --from=build /app/dist ./dist
 
-EXPOSE 8000
+EXPOSE ${PORT}
 
 CMD ["node", "dist/server.js"]
