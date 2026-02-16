@@ -21,4 +21,4 @@ COPY --from=build /app/dist ./dist
 
 EXPOSE ${PORT}
 
-CMD ["node", "dist/server.js"]
+CMD ["npm", "start"]
