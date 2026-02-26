@@ -6,10 +6,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "${PORT}:${PORT}"
-    volumes:
-      - .:/app
     env_file:
-      - .env.production
+      - .env
     command: npm run start
     depends_on:
       db:

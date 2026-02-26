@@ -1,5 +1,5 @@
 # Stage 1: build stage
-FROM node:alpine AS build
+FROM node:20-alpine AS build
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ COPY . .
 RUN npm run build     # compiles TS to JS in /app/dist
 
 # Stage 2: production stage
-FROM node:alpine
+FROM node:20-alpine
 
 WORKDIR /app
 
